@@ -1,23 +1,41 @@
-const express = require('express');
-const app =express();
-app.use(express.json);
-const courses =[
-    {id: 1, name:"course1"},
-    {id: 2,name:"course2"},
-];
+const express = require("express");
+const sql = require("mssql");
+const app = express();
+const cors = require("cors");
 
-app.get('/', (req,res)=>{
-    res.send("Hi Collins, You are writing your first backend code");
-})
+//create config
+const config = {
+  server: "COLLINS-KANDIE\\SQL SERVER",
+  user: "collins",
+  password: "123",
+  database: "SysproCompanyA",
+  options: {
+    enableArithAbort: true,
+  },
+  connectionTimeout: 150000,
+  pool: {
+    max: 10,
+    min: 0,
+    idleTimeoutMillis: 30000,
+  },
+};
 
-app.post('/api/courses', (req,res)=>{
-    const course = {
-        id: courses.length + 1,
-        name: req.body.name 
+sql.on('error', err =>{
+    console.log(err.message)
+});
+
+async function getDBUsersAsyncFunction(){
+    try {
+        let pool =await sql.connect(config);
+       let result = await pool.request().query('select * from AdmAltTax');
+       console.log(result);
+       sql.close()
+
+    } catch (error) {
+        console.log(error.message);
+        sql.close()        
     }
-    courses.push(course);
-    res.send(course); 
-})
-//set the port of the app
-const port =process.env.PORT || 3000
-app.listen(port, ()=> console.log(port, "port  active"));
+}
+getDBUsersAsyncFunction();
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(port, "port  active"));
