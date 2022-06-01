@@ -1,12 +1,13 @@
 const config = {
-  server: "172.16.1.19",
+  server: "SYSPROSERVER",
   user: "syspro",
   password: "syspro",
   database: "SysproCompanyA",
   options: {
-    trustedconnection: true,
+    trustedConnection: true,
+    encrypt: true,
     enableArithAbort: true,
+    trustServerCertificate: true,
   },
-  port: 1433,
 };
-module.export =config;
+module.exports = config;
