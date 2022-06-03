@@ -11,12 +11,11 @@ router.get("/testconnection", function (req, res, next) {
   console.log("Working");
 });
 // get data from table
-router.get("/getdata", function (req, res, next) {
+router.get("/api/summarySales", function (req, res, next) {
   ww.getData2().then((result1) => {
-    res.json(result1[0]);
+    res.json(result1);
   });
   // res.render("index", { title: "Get Database data" });
   // console.log("Working");
 });
-
 module.exports = router;
