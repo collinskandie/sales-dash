@@ -1,12 +1,20 @@
 import './App.css';
-import Sales from './Components/sales';
+// import Example from './Components/example';
+import Dashboard from './Components/Dashboard';
+import styled from 'styled-components'
+import Sidebar from './Components/sidebar';
 
 function App() {
   return (
-    <div className="App">
-    <Sales/>      
-    </div>
+    <Div>
+     <Sidebar/>
+     <Dashboard/>
+    </Div>
+   
   );
 }
 
 export default App;
+const Div = styled.div `
+position: relative;
+`;
