@@ -9,13 +9,15 @@ import { AiFillCodeSandboxCircle } from "react-icons/ai";
 import { SiAccusoft } from "react-icons/si";
 import { AiOutlineLogout } from "react-icons/ai";
 import { SiGooglemessages } from "react-icons/si";
+import syspro from '../assest/syspro.png'
 function Sidebar() {
   const [currentLink, setCurrentLink] = useState(1);
   return (
     <Section>
       <div className="top">
         <div className="brand">
-          <AiFillCodeSandboxCircle />
+        <img className="svg" src={syspro}/>
+          {/* <AiFillCodeSandboxCircle /> */}
           <span>Syspro Dash</span>
         </div>
         <div className="links">
@@ -121,9 +123,12 @@ const Section = styled.div`
       justify-content: center;
       align-items: center;
       gap: 1.3rem 0;
-      svg {
+      .svg {
+        width: 30px;
+        height: 30px;
         color: green;
         font-size: 3rem;
+        border-radius: 50%;
       }
       span {
         font-size: 1.5rem;

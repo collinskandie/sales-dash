@@ -5,6 +5,7 @@ import Report from "../Components/Report";
 import Overview from "../Components/Overview";
 import Sales from "../Components/Sales";
 import Messages from "../Components/Messages";
+
 function Dashboard() {
   return (
     <Section>
@@ -12,11 +13,11 @@ function Dashboard() {
       <div className="grid">
         <div className="grid-1">
           <Overview />
-
-          <Report />
+          <Sales /> 
+          <Report />         
         </div>
         <div className="grid-2">
-          <Sales />
+          
           <Messages />
         </div>
       </div>
