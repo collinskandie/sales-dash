@@ -7,6 +7,7 @@ import { AiFillCaretDown } from "react-icons/ai";
 import AvatarImg from "../assest/webApp.png";
 import Appleimg from "../assest/apple.png";
 
+
 function Navbar() {
   return (
     <Nav>
