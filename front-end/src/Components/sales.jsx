@@ -1,11 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import {Tooltip, ResponsiveContainer } from "recharts";
+import { Tooltip, ResponsiveContainer } from "recharts";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Legend } from "recharts";
+import Select from "react-select";
+import { useState, useEffect } from "react";
 
-
-
-function Sales()  { 
+function Sales() {
+  const [period, setPeriod] = useState(null);
+  const URL = "/api/selectPeriod";
+  useEffect(() => {
+    loadPeriod();
+  }, []);
+  const loadPeriod = async () => {
+    try {
+      fetch(URL)
+      .then((res) => res.json())
+      .then((response) => {
+        console.log(response);
+        setPeriod(response);
+      });
+    } catch (error) {
+      console.log("load period", error);
+    }
+  };
+  
   return (
     <Section>
       <div className="sales">
@@ -13,11 +31,9 @@ function Sales()  {
           <div>
             <h4>Sales Overview</h4>
           </div>
-          <div>
-            <select className="button">
-              <option value="monthly"> Monthly</option>
-              <option value="yearly">Yearly</option>
-            </select>
+          <div>          
+            <Select options={period}
+            ></Select>
           </div>
         </div>
         <div className="sales_graph">
@@ -48,7 +64,6 @@ function Sales()  {
               <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
             </LineChart>
           </ResponsiveContainer>
-         
         </div>
       </div>
     </Section>
