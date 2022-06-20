@@ -11,5 +11,4 @@ function Shopping() {
 
 export default Shopping
 const Section= styled.section`
-${'' /* style here */}
 `;

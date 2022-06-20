@@ -53,11 +53,3 @@ const Section = styled.section`
   }
 `;
 
-//unused but usefull code
-// componentDidMount() {
-//     fetch("/api/summarySales")
-//       .then((res) => res.json())
-//       .then((sales) =>
-//         this.setState({ sales }, () => console.log("sales fetched", sales))
-//       );
-// }
