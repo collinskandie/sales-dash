@@ -5,8 +5,7 @@ import { BsFillCalendarDateFill } from "react-icons/bs";
 import { BsBell } from "react-icons/bs";
 import { AiFillCaretDown } from "react-icons/ai";
 import AvatarImg from "../assest/webApp.png";
-import Appleimg from "../assest/apple.png";
-
+//import Appleimg from "../assest/apple.png";
 
 function Navbar() {
   return (

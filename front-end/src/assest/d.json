@@ -1,0 +1,11 @@
+[{"Invoice":"020101","TrnMonth":1,"Salesperson":"DIR","NetSalesValue":10000,"TrnYear":2020},
+    {"Invoice":"020102","TrnMonth":1,"Salesperson":"DIR","NetSalesValue":178100,"TrnYear":2020},
+    {"Invoice":"C23798","TrnMonth":1,"Salesperson":"DIR","NetSalesValue":1206.9,"TrnYear":2020},
+    {"Invoice":"020103","TrnMonth":1,"Salesperson":"DIR","NetSalesValue":8450,"TrnYear":2020},
+    {"Invoice":"A25865","TrnMonth":1,"Salesperson":"042","NetSalesValue":4705512,"TrnYear":2020},
+    {"Invoice":"020104","TrnMonth":1,"Salesperson":"DIR","NetSalesValue":251600,"TrnYear":2020},
+    {"Invoice":"A25868","TrnMonth":1,"Salesperson":"042","NetSalesValue":670690.5,"TrnYear":2020},
+    {"Invoice":"A25869","TrnMonth":1,"Salesperson":"042","NetSalesValue":423603,"TrnYear":2020},
+    {"Invoice":"A25870","TrnMonth":1,"Salesperson":"041","NetSalesValue":20000,"TrnYear":2020},
+    {"Invoice":"A25871","TrnMonth":1,"Salesperson":"041","NetSalesValue":450000,"TrnYear":2020}
+]

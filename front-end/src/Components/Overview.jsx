@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { AiFillAmazonCircle, AiFillTag, AiOutlineArrowUp } from "react-icons/ai";
+import {
+  AiFillAmazonCircle,
+  AiFillTag,
+  AiOutlineArrowUp,
+} from "react-icons/ai";
 import { AiFillExperiment } from "react-icons/ai";
 
 function Overview() {
@@ -12,14 +16,14 @@ function Overview() {
             <AiFillTag />
           </div>
           <div className="content">
-           {/* //Custom data */}
+            {/* //Custom data */}
             <h5> Ksh $123,456,789</h5>
           </div>
         </div>
         <div className="total">
           <h6>Total Sales</h6>
           <span className="t1">+18%</span>
-          <AiOutlineArrowUp className="svg1"/>
+          <AiOutlineArrowUp className="svg1" />
         </div>
       </div>
       <div className="analytics color2">
@@ -28,20 +32,20 @@ function Overview() {
             <AiFillExperiment />
           </div>
           <div className="content">
-          {/* //Custom data */}
+            {/* //Custom data */}
             <h5> Ksh $123,456,789</h5>
           </div>
         </div>
         <div className="total">
           <h6>Total Sales</h6>
           <span className="t1">+18%</span>
-          <AiOutlineArrowUp className="svg1"/>
+          <AiOutlineArrowUp className="svg1" />
         </div>
       </div>
       <div className="analytics color3">
         <div className="design">
           <div className="logo">
-            <AiFillAmazonCircle/>
+            <AiFillAmazonCircle />
           </div>
           <div className="content">
             <h5> Ksh $123,456,789</h5>
@@ -50,7 +54,7 @@ function Overview() {
         <div className="total">
           <h6>Total Sales</h6>
           <span className="t1">+18%</span>
-          <AiOutlineArrowUp className="svg2"/>
+          <AiOutlineArrowUp className="svg2" />
         </div>
       </div>
     </Section>
@@ -80,18 +84,18 @@ const Section = styled.section`
     align-items: center;
     gap: 1rem;
     transition: 0.5s ease-in-out;
-    &:hover{
+    &:hover {
       background-color: #d4eoff;
       color: green;
-      svg{
+      svg {
         color: green;
-      } 
+      }
     }
-    .design{
+    .design {
       display: flex;
       align-items: center;
       gap: 1rem;
-      .logo{
+      .logo {
         background-color: #fdf4f5;
         border-radius: 1rem;
         border: 1px solid green;
@@ -99,31 +103,29 @@ const Section = styled.section`
         justify-content: center;
         align-items: center;
         padding: 0.5rem;
-        svg{
+        svg {
           font-size: 2rem;
         }
       }
     }
-    .total{
-     display: flex;
-     align-itmes: center;
-     gap: 1rem;
-     justify-content: space-evenly;
-     margin-top: 20px;
-     .svg1{
-      color: green;      
-     }
-     .svg2{
-      color: red;      
-     }
-     .t1{
-      color: green;      
-     }
-     }
-     .t2{
-      color: red;      
-     }
-
+    .total {
+      display: flex;
+      align-itmes: center;
+      gap: 1rem;
+      justify-content: space-evenly;
+      margin-top: 20px;
+      .svg1 {
+        color: green;
+      }
+      .svg2 {
+        color: red;
+      }
+      .t1 {
+        color: green;
+      }
+    }
+    .t2 {
+      color: red;
     }
   }
 `;
