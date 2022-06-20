@@ -5,6 +5,8 @@ import Report from "../Components/Report";
 import Overview from "../Components/Overview";
 import Sales from "../Components/Sales";
 import Messages from "../Components/Messages";
+import Analytics from "./Analytics";
+import Shopping from "./Shopping";
 
 function Dashboard() {
   return (
@@ -17,8 +19,9 @@ function Dashboard() {
           <Report />         
         </div>
         <div className="grid-2">
-          
+          <Analytics/>
           <Messages />
+          <Shopping/>
         </div>
       </div>
     </Section>
@@ -57,4 +60,4 @@ const Section = styled.section`
 //       .then((sales) =>
 //         this.setState({ sales }, () => console.log("sales fetched", sales))
 //       );
-//   }
+// }

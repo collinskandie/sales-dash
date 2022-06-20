@@ -12,12 +12,13 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "^1.9.2",
+    "lodash.chunk": "^4.2.0",
+    "lodash.flatten": "^4.4.0",
     "morgan": "~1.9.1",
     "mssql": "^8.1.2"
   },
   "description": "node back-end",
   "main": "app.js",
-  "devDependencies": {},
   "author": "Collins Kandie",
   "license": "ISC"
 }

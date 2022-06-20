@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
+import {Tooltip, ResponsiveContainer } from "recharts";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Legend } from "recharts";
 
-// import { AiOutlineCaretDown, AioutlineCaretDown } from "react-icons/ai";
 
-function Sales() {
+
+function Sales()  { 
   return (
     <Section>
       <div className="sales">
@@ -15,9 +15,7 @@ function Sales() {
           </div>
           <div>
             <select className="button">
-              <option selected value="monthly">
-                Monthly
-              </option>
+              <option value="monthly"> Monthly</option>
               <option value="yearly">Yearly</option>
             </select>
           </div>
@@ -52,24 +50,6 @@ function Sales() {
           </ResponsiveContainer>
          
         </div>
-        {/* <ResponsiveContainer width="100%" height="100%">
-            <AreaChart width={500} height={300} data={data} margin={{
-              top:10,
-            }}>
-              <defs>
-                <linearGradient id="colorview" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="30%" stopColor="#668DFF" stopOpacity="{0.4}"/>
-                  <stop offset="85%" stopColor="#D4E0ff" stopOpacity="{0.2}"/>
-                </linearGradient>
-              </defs>
-              <tooltip cursor="{true}"/>
-              <Area
-              type="monotone"
-              dataKey="pv"
-              stroke= "#668dff"
-              fill="url(#colorview)"/>
-            </AreaChart>
-          </ResponsiveContainer> */}
       </div>
     </Section>
   );

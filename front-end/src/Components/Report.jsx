@@ -1,67 +1,38 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
+import data from '../assest/d.json'
 
-function Report() {
+
+
+function Report() { 
   return (
     <Section>
       <div className="orders">
-        <div className="orders_deatails">
-          <div>
-            <h4>Active Orders</h4>
-          </div>         
+        <div className="orders_deatails">          
+            <h4>Active Orders</h4>                   
         </div>
-      </div>
       <div className="orders-table">
-        <table>
-          <tr>
-            <th>Tracking Id</th>
-            <th>Product Name</th>
-            <th>Date</th>
-            <th>Price</th>
-            <th>Status</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Apple Watch</td>
-            <td>June 14, 2020</td>
-            <td>Ksh 3400</td>
-            <td><button>Complete</button></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Apple Watch</td>
-            <td>June 14, 2020</td>
-            <td>Ksh 3400</td>
-            <td><button>Complete</button></td>
-          </tr>          
-        </table>
+        {/* {
+          Object.entries(data,index).map(item=>{
+            console.log(item[1].Invoice);
+          })
+        } */}
+       
         </div>
       <a href="link.c"className="button">See more...</a>
-    </Section>
+    
+    </div></Section>
   );
 }
-
 export default Report;
 const Section = styled.section`
   .orders {
-    color:black;
+    color:green;
     width: 100%;
     .orders_deatails {
       display:flex;
       justify-content: space-between;
-      margin: 1rem 0;
-      div{
-        display: flex;
-        gap: 1rem;
-        button {
-          padding: 0.4rem 1rem;
-          border: none;
-          cursor: pointer;
-          background-color: white;
-          color: green;
-          font-weight: bold;
-        }
-      }
+      margin: 1rem 0;      
     }
     .orders-table {
       display: flex;
@@ -82,7 +53,6 @@ const Section = styled.section`
             background-color: green;
             color: white;
           }
-
         }  
       }
     }
