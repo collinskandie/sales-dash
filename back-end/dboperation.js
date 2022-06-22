@@ -14,7 +14,7 @@ async function getData() {
 async function getData2() {
   try {
     let pool = await sql.connect(config);
-    var result = await pool.request().query("select top 100 Invoice,TrnMonth,Salesperson,NetSalesValue,TrnYear from ArTrnDetails where TrnYear >= 2020");
+    var result = await pool.request().query("select Invoice,TrnMonth,Salesperson,NetSalesValue,Customer,ProductClass,TrnYear from ArTrnDetail where TrnYear >= 2022 and Branch <> 'ST' ");
     return result.recordsets;
   } catch (error) {
     console.log(error);
