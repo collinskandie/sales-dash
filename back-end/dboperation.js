@@ -29,8 +29,39 @@ async function getPeriod() {
     console.log(error);
   }
 }
+//select sales per period
+async function salesPeriods() {
+  try {
+    let pool = await sql.connect(config);
+    var result = await pool.request().query("select month(InvoiceDate) month,sum(NetSalesValue) total from ArTrnDetails where TrnYear =2022  AND Branch != 'ST' group by month(InvoiceDate)order by month(InvoiceDate)");
+    return result.recordsets;
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function currentYearSales() {
+  try {
+    let pool = await sql.connect(config);
+    var result = await pool.request().query("select sum(NetSalesValue) totalsales from ArTrnDetails where TrnYear =2022");
+    return result.recordsets;
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function currentMonthSales() {
+  try {
+    let pool = await sql.connect(config);
+    var result = await pool.request().query("select sum(NetSalesValue) totalsales from ArTrnDetails where TrnYear =2022");
+    return result.recordsets;
+  } catch (error) {
+    console.log(error);
+  }
+}
 module.exports = {
   getData: getData,
   getData2: getData2,
-  getPeriod: getPeriod
+  getPeriod: getPeriod,
+  salesPeriods: salesPeriods,
+  currentMonthSales:currentMonthSales,
+  currentYearSales:currentYearSales
 };

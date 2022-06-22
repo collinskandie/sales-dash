@@ -28,4 +28,28 @@ router.get("/api/selectPeriod", function (req, res, next) {
     return res.send(jsonContent);
   });
 });
+router.get("/api/selectSubTotals", function (req, res, next) {
+  ww.salesPeriods().then((period) => {
+    // res.json(result1);
+    var flattened = flatten(period);
+    var jsonContent = JSON.stringify(flattened);
+    return res.send(jsonContent);
+  });
+});
+router.get("/api/yearTotal", function (req, res, next) {
+  ww.currentYearSales().then((period) => {
+    // res.json(result1);
+    var flattened = flatten(period);
+    var jsonContent = JSON.stringify(flattened);
+    return res.send(jsonContent);
+  });
+});
+router.get("/api/monthTotal", function (req, res, next) {
+  ww.currentMonthSales().then((period) => {
+    // res.json(result1);
+    var flattened = flatten(period);
+    var jsonContent = JSON.stringify(flattened);
+    return res.send(jsonContent);
+  });
+});
 module.exports = router;

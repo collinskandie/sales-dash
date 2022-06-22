@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import styled from "styled-components";
 import { AiFillDashboard } from "react-icons/ai";
 import { FcSalesPerformance } from "react-icons/fc";
 import { FaSalesforce } from "react-icons/fa";
 import { GiProfit } from "react-icons/gi";
 import { GrOverview } from "react-icons/gr";
-import { AiFillCodeSandboxCircle } from "react-icons/ai";
 import { SiAccusoft } from "react-icons/si";
 import { AiOutlineLogout } from "react-icons/ai";
 import { SiGooglemessages } from "react-icons/si";
 import syspro from '../assest/syspro.png'
+
 function Sidebar() {
   const [currentLink, setCurrentLink] = useState(1);
   return (
     <Section>
       <div className="top">
         <div className="brand">
-        <img className="svg" src={syspro}/>
+        <img className="svg" src={syspro} alt="syspro logo"/>
           {/* <AiFillCodeSandboxCircle /> */}
           <span>Syspro Dash</span>
         </div>
@@ -26,7 +26,7 @@ function Sidebar() {
               className={currentLink === 1 ? "active" : "none"}
               onClick={() => setCurrentLink(1)}
             >
-              <a href="#">
+              <a href="index.js">
                 <AiFillDashboard />
                 <span className="border">Dashboard</span>
               </a>
@@ -35,7 +35,7 @@ function Sidebar() {
               className={currentLink === 2 ? "active" : "none"}
               onClick={() => setCurrentLink(2)}
             >
-              <a href="#">
+              <a href="sales.vh">
                 <FcSalesPerformance />
                 <span className="border">Sales</span>
               </a>
@@ -44,7 +44,7 @@ function Sidebar() {
               className={currentLink === 3 ? "active" : "none"}
               onClick={() => setCurrentLink(3)}
             >
-              <a href="#">
+              <a href="Reports.com">
                 <FaSalesforce />
                 <span className="border">Customized Reports</span>
               </a>
@@ -53,7 +53,7 @@ function Sidebar() {
               className={currentLink === 4 ? "active" : "none"}
               onClick={() => setCurrentLink(4)}
             >
-              <a href="#">
+              <a href="Profit.nk">
                 <GiProfit />
                 <span className="border">Profit</span>
               </a>
@@ -62,7 +62,7 @@ function Sidebar() {
               className={currentLink === 5 ? "active" : "none"}
               onClick={() => setCurrentLink(5)}
             >
-              <a href="#">
+              <a href="Messages.vj">
                 <SiGooglemessages />
                 <span className="border">Messages</span>
               </a>
@@ -71,7 +71,7 @@ function Sidebar() {
               className={currentLink === 6 ? "active" : "none"}
               onClick={() => setCurrentLink(6)}
             >
-              <a href="#">
+              <a href="overview.ck">
                 <GrOverview />
                 <span className="border">Overview</span>
               </a>
@@ -80,7 +80,7 @@ function Sidebar() {
               className={currentLink === 7 ? "active" : "none"}
               onClick={() => setCurrentLink(7)}
             >
-              <a href="#">
+              <a href="suggestions.ck">
                 <SiAccusoft />
                 <span className="border">Suggestions</span>
               </a>
@@ -89,7 +89,7 @@ function Sidebar() {
         </div>
       </div>
       <div className="logout">
-        <a href="">
+        <a href="logout.ck">
           <AiOutlineLogout />
           <span>Logout</span>
         </a>

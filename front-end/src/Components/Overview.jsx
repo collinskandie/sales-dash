@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   AiFillAmazonCircle,
@@ -8,6 +9,39 @@ import {
 import { AiFillExperiment } from "react-icons/ai";
 
 function Overview() {
+  const [yearData, setyearData] = useState(null);
+  const [monthData, setmonthData] = useState(null);
+  const URL1 = "/api/yearTotal";
+  const URL2 = "/api/monthTotal";
+  //const URL3 = "/api/yearTotal";
+  useEffect(() => {
+    loadData();
+    loadData2();
+  }, []);
+  const loadData = async () => {
+    try {
+      fetch(URL1)
+      .then((res) => res.json())
+      .then((response) => {
+        console.log(response);
+        setyearData(response);
+      });
+    } catch (error) {
+      console.log("load period", error);
+    }
+  };
+  const loadData2 = async () => {
+    try {
+      fetch(URL2)
+      .then((res) => res.json())
+      .then((response) => {
+        console.log(response);
+        setmonthData(response);
+      });
+    } catch (error) {
+      console.log("load period", error);
+    }
+  };
   return (
     <Section>
       <div className="analytics color1">
@@ -17,11 +51,14 @@ function Overview() {
           </div>
           <div className="content">
             {/* //Custom data */}
-            <h5> Ksh $123,456,789</h5>
+            {/* {yearData.map((v) => (
+              <h5> {v.totalsales}</h5> 
+               ))} */}
+            
           </div>
         </div>
         <div className="total">
-          <h6>Total Sales</h6>
+          <h6>Year total sales</h6>
           <span className="t1">+18%</span>
           <AiOutlineArrowUp className="svg1" />
         </div>
@@ -33,11 +70,11 @@ function Overview() {
           </div>
           <div className="content">
             {/* //Custom data */}
-            <h5> Ksh $123,456,789</h5>
+            {/* <h5> {monthData}</h5> */}
           </div>
         </div>
         <div className="total">
-          <h6>Total Sales</h6>
+          <h6>Month Sales</h6>
           <span className="t1">+18%</span>
           <AiOutlineArrowUp className="svg1" />
         </div>

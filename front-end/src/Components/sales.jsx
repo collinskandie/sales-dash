@@ -6,18 +6,18 @@ import Select from "react-select";
 import { useState, useEffect } from "react";
 
 function Sales() {
-  const [period, setPeriod] = useState(null);
-  const URL = "/api/selectPeriod";
+  const [data, setData] = useState(null);
+  const URL = "/api/selectSubTotals";
   useEffect(() => {
-    loadPeriod();
+    loadData();
   }, []);
-  const loadPeriod = async () => {
+  const loadData = async () => {
     try {
       fetch(URL)
       .then((res) => res.json())
       .then((response) => {
         console.log(response);
-        setPeriod(response);
+        setData(response);
       });
     } catch (error) {
       console.log("load period", error);
@@ -32,8 +32,7 @@ function Sales() {
             <h4>Sales Overview</h4>
           </div>
           <div>          
-            <Select options={period}
-            ></Select>
+            <Select></Select>
           </div>
         </div>
         <div className="sales_graph">
@@ -45,23 +44,22 @@ function Sales() {
               margin={{
                 top: 5,
                 right: 30,
-                left: 20,
+                left: 70,
                 bottom: 5,
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
+              <XAxis dataKey="month" />
               <YAxis />
               <Tooltip />
               <Legend />
               <Line
                 type="monotone"
-                dataKey="pv"
+                dataKey="total"
                 stroke="#8884d8"
                 fill="url(#colorview)"
                 activeDot={{ r: 8 }}
-              />
-              <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+              />              
             </LineChart>
           </ResponsiveContainer>
         </div>
