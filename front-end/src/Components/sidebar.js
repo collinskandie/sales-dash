@@ -1,14 +1,15 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { AiFillDashboard } from "react-icons/ai";
-import { FcSalesPerformance } from "react-icons/fc";
-import { FaSalesforce } from "react-icons/fa";
+import { BsPersonSquare } from "react-icons/bs";
+import { MdProductionQuantityLimits } from "react-icons/md";
 import { GiProfit } from "react-icons/gi";
 import { GrOverview } from "react-icons/gr";
 import { SiAccusoft } from "react-icons/si";
 import { AiOutlineLogout } from "react-icons/ai";
 import { SiGooglemessages } from "react-icons/si";
-import syspro from '../assest/syspro.png'
+import { Link } from "react-router-dom";
+import syspro from "../assest/syspro.png";
 
 function Sidebar() {
   const [currentLink, setCurrentLink] = useState(1);
@@ -16,7 +17,7 @@ function Sidebar() {
     <Section>
       <div className="top">
         <div className="brand">
-        <img className="svg" src={syspro} alt="syspro logo"/>
+          <img className="svg" src={syspro} alt="syspro logo" />
           {/* <AiFillCodeSandboxCircle /> */}
           <span>Syspro Dash</span>
         </div>
@@ -26,64 +27,64 @@ function Sidebar() {
               className={currentLink === 1 ? "active" : "none"}
               onClick={() => setCurrentLink(1)}
             >
-              <a href="index.js">
+              <Link to = '/'>
                 <AiFillDashboard />
                 <span className="border">Dashboard</span>
-              </a>
+              </Link>
             </li>
             <li
               className={currentLink === 2 ? "active" : "none"}
               onClick={() => setCurrentLink(2)}
             >
-              <a href="sales.vh">
-                <FcSalesPerformance />
-                <span className="border">Sales</span>
-              </a>
+              <Link to='/salesperson'>
+                <BsPersonSquare />
+                <span className="border">Salesperson report</span>
+              </Link>
             </li>
             <li
               className={currentLink === 3 ? "active" : "none"}
               onClick={() => setCurrentLink(3)}
             >
-              <a href="Reports.com">
-                <FaSalesforce />
-                <span className="border">Customized Reports</span>
-              </a>
+              <Link to='/productsales'>
+                <MdProductionQuantityLimits />
+                <span className="border">Products Sales</span>
+              </Link>
             </li>
             <li
               className={currentLink === 4 ? "active" : "none"}
               onClick={() => setCurrentLink(4)}
             >
-              <a href="Profit.nk">
+              <Link to="/profit">
                 <GiProfit />
                 <span className="border">Profit</span>
-              </a>
+              </Link>
             </li>
             <li
               className={currentLink === 5 ? "active" : "none"}
               onClick={() => setCurrentLink(5)}
             >
-              <a href="Messages.vj">
+              <Link to="/messages">
                 <SiGooglemessages />
                 <span className="border">Messages</span>
-              </a>
+              </Link>
             </li>
             <li
               className={currentLink === 6 ? "active" : "none"}
               onClick={() => setCurrentLink(6)}
             >
-              <a href="overview.ck">
+              <Link to="/overview">
                 <GrOverview />
                 <span className="border">Overview</span>
-              </a>
+              </Link>
             </li>
             <li
               className={currentLink === 7 ? "active" : "none"}
               onClick={() => setCurrentLink(7)}
             >
-              <a href="suggestions.ck">
+              <Link to="/suggestions">
                 <SiAccusoft />
                 <span className="border">Suggestions</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -102,7 +103,7 @@ export default Sidebar;
 const Section = styled.div`
   position: fixed;
   left: 0;
-  background-color: rgb(0,128,0,0.2);
+  background-color: rgb(0, 128, 0, 0.2);
   height: 100vh;
   width: 35vh;
   display: flex;
@@ -177,24 +178,22 @@ const Section = styled.div`
       }
     }
   }
-  .logout{
-      padding: 0.6rem 3rem;
-      margin-left: -2rem;
-      a{
-          text-decoration: none;
-          display: flex;
-          align-content: center;
-          justify-content: center;
-          color: black;
-          gap: 1rem;
-          svg{
-              font-size: 1.4rem;              
-          }
-          span{
-              display: flex;
-
-          }
-
+  .logout {
+    padding: 0.6rem 3rem;
+    margin-left: -2rem;
+    a {
+      text-decoration: none;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      color: black;
+      gap: 1rem;
+      svg {
+        font-size: 1.4rem;
       }
+      span {
+        display: flex;
+      }
+    }
   }
 `;

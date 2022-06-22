@@ -30,6 +30,8 @@ function Report() {
                 <th>Month</th>
                 <th>Sales person</th>
                 <th>Net Sales</th>
+                <th>Customer</th>
+                <th>Product Class</th>
                 <th>Year</th>
                 {/* <th>Net Sales</th>
                     <th>Net Sales</th>
@@ -41,6 +43,8 @@ function Report() {
                   <td>{item.TrnMonth}</td>
                   <td>{item.Salesperson}</td>
                   <td>{item.NetSalesValue}</td>
+                  <td>{item.Customer}</td>
+                  <td>{item.ProductClass}</td>
                   <td>{item.TrnYear}</td>
                   {/* <td>{item.NetSalesValue}</td>
                         <td>{item.NetSalesValue}</td> */}
@@ -78,17 +82,16 @@ const Section = styled.section`
         display: block;
         overflow-x: auto;
         white-space: nowrap;
-        th{
-          
+        th {
           font-size: 15px;
           text-align: center;
           padding: 5px;
-          justify-content: space-evenly;         
+          justify-content: space-evenly;
         }
         td {
           text-align: center;
           padding: 5px;
-          justify-content: space-evenly;          
+          justify-content: space-evenly;
         }
       }
     }

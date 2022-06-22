@@ -1,36 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../Components/Navbar";
-import Report from "../Components/Report";
-import Overview from "../Components/Overview";
-import Sales from "../Components/sales";
-import Messages from "../Components/Messages";
-import Analytics from "./Analytics";
-import Shopping from "./Shopping";
-import Sidebar from "./sidebar";
+import Sidebar from "../Components/sidebar";
 
-function Dashboard() {
+function ProductsReport() {
   return (
     <Section>
-    <Sidebar/>
-    <Navbar />
+      <Sidebar />
+      <Navbar />
       <div className="grid">
         <div className="grid-1">
-          <Overview />
-          <Sales /> 
-          <Report />         
+        //wow!!          
         </div>
-        <div className="grid-2">
-          <Analytics/>
-          <Messages />
-          <Shopping/>
+        <div className="grid-2">    
+        !!Great     
         </div>
       </div>
     </Section>
   );
 }
 
-export default Dashboard;
+export default ProductsReport;
 const Section = styled.section`
   margin-left: 36vh;
   height: 100%;
@@ -54,4 +44,3 @@ const Section = styled.section`
     }
   }
 `;
-
