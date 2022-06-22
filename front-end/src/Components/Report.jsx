@@ -77,20 +77,18 @@ const Section = styled.section`
         height: 100%;
         display: block;
         overflow-x: auto;
-        ${'' /* white-space: nowrap; */}
-        th,
+        white-space: nowrap;
+        th{
+          
+          font-size: 15px;
+          text-align: center;
+          padding: 5px;
+          justify-content: space-evenly;         
+        }
         td {
           text-align: center;
           padding: 5px;
-          justify-content: space-evenly;
-          button {
-            border-radius: 0.3rem;
-            padding: 0.4rem 1rem;
-            border: none;
-            cursor: pointer;
-            background-color: green;
-            color: white;
-          }
+          justify-content: space-evenly;          
         }
       }
     }
