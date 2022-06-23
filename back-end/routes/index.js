@@ -52,4 +52,20 @@ router.get("/api/monthTotal", function (req, res, next) {
     return res.send(jsonContent);
   });
 });
+router.get("/api/salesperson", function (req, res, next) {
+  ww.getSalespersonSales().then((period) => {
+    // res.json(result1);
+    var flattened = flatten(period);
+    var jsonContent = JSON.stringify(flattened);
+    return res.send(jsonContent);
+  });
+});
+router.get("/api/salesperson1", function (req, res, next) {
+  ww.getSalespersonSales().then((period) => {
+    // res.json(result1);
+    var flattened = flatten(period);
+    var jsonContent = JSON.stringify(flattened);
+    return res.send(jsonContent);
+  });
+});
 module.exports = router;
