@@ -57,10 +57,21 @@ async function currentMonthSales() {
     console.log(error);
   }
 }
+
 async function getSalespersonSales() {
   try {
     let pool = await sql.connect(config);
     var result = await pool.request().query("select ProductClass, sum(NetSalesValue) total from ArTrnDetail where TrnYear =2022 and Salesperson = 'DIR' AND Branch != 'ST' group by ProductClass");
+    return result.recordsets;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function getSalespersonDetails() {
+  try {
+    let pool = await sql.connect(config);
+    var result = await pool.request().query("SELECT  A.Salesperson, sum(T.NetSalesValue)Sales,A.Name FROM SalSalesperson A JOIN ArTrnDetail T on ( A.Salesperson = T.Salesperson) where A.Salesperson ='001'  group by A.Salesperson,A.Name order by A.Salesperson");
     return result.recordsets;
   } catch (error) {
     console.log(error);
@@ -73,5 +84,7 @@ module.exports = {
   salesPeriods: salesPeriods,
   currentMonthSales:currentMonthSales,
   currentYearSales:currentYearSales,
-  getSalespersonSales:getSalespersonSales
+  getSalespersonSales:getSalespersonSales,
+  getSalespersonDetails:getSalespersonDetails
+  
 };

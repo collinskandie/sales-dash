@@ -3,46 +3,24 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Sidebar from "../Components/sidebar";
 import Navbar from "../Components/Navbar";
-import { DataGrid } from "@mui/x-data-grid";
-const columns = [
-  { field: "ProductClass", headerName: "Product", width: 70 },  
-  {
-    field: "total",
-    headerName: "Total Sales",
-    description: "This column has a value getter and is not sortable.",    
-    width: 160,
-  },
-];
-
-// const rows = [
-//   { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
-//   { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
-//   { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
-//   { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
-//   { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
-//   { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
-//   { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-//   { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-//   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
-// ];
 function Salesperson() {
   const [data, setData] = useState(null);
-  const URL1 = "/api/salesperson";
+  const URL = "/api/salesperson1";
   useEffect(() => {
     loadData();
   }, []);
   const loadData = async () => {
     try {
-      fetch(URL1)
+      fetch(URL)
         .then((res) => res.json())
-        .then((response) => {
-          console.log(response);
-          setData(response);
+        .then((res) => {
+          console.log(res);
+          setData(res);
         });
     } catch (error) {
       console.log("load period", error);
     }
-  };
+  }; 
   return (
     <Section>
       <Sidebar />
@@ -55,17 +33,9 @@ function Salesperson() {
             {"  "}
             <button>Update</button>
           </form>
-          <label>Name:</label>
-          <label>Total Sales: </label>
+          <label>Name:{data.Name}</label>
+          <label>Total Sales:{data.Sales} </label>
           <div>
-            <div style={{ height: 700, width: "100%" }}>
-              <DataGrid
-                rows={data}
-                columns={columns}
-                // pageSize={5}
-                rowsPerPageOptions={[1000]}                
-              />
-            </div>
           </div>
         </div>
         <div className="grid-2">orders_deatails</div>
