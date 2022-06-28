@@ -61,7 +61,7 @@ router.get("/api/salesperson", function (req, res, next) {
   });
 });
 
-router.get("/api/salesperson1", function (req, res, next) {
+router.get("/api/salespersonSales", function (req, res, next) {
   ww.getSalespersonDetails().then((period) => {
     // res.json(result1);
     var flattened = flatten(period);
@@ -69,4 +69,8 @@ router.get("/api/salesperson1", function (req, res, next) {
     return res.send(jsonContent);
   });
 });
-module.exports = router;
+router.post("/api/salesperson1", function(req,res,next){
+  // console.log(req.body);
+  res.send(req.body); 
+});
+module.exports = router; 

@@ -4,37 +4,40 @@ import styled from "styled-components";
 import Sidebar from "../Components/sidebar";
 import Navbar from "../Components/Navbar";
 function Salesperson() {
-  const [data, setData] = useState(null);
-  const URL = "/api/salesperson1";
+  const [userId, setUserid] = useState('');
+  const URL = "/api/salesperson1/";
   useEffect(() => {
-    loadData();
+    // loadData();
   }, []);
-  const loadData = async () => {
-    try {
-      fetch(URL)
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res);
-          setData(res);
-        });
-    } catch (error) {
-      console.log("load period", error);
-    }
-  }; 
+  function handleSubmit (e) {
+    e.preventDefault();
+    const userDetails= { userId };
+    fetch(URL, {
+      method: "POST",
+      headers: {"Content-Type": "application/JSON"},
+      body: JSON.stringify(userDetails) 
+    })
+   
+  } 
+  const search =()=>{
+    //function to send request to apis
+
+  }
   return (
     <Section>
       <Sidebar />
       <Navbar />
       <div className="grid">
         <div className="grid-1">
-          <form>
-            <p>Search</p>
-            <input type="text" />
+          <form onSubmit={e => {handleSubmit(e)}}>
+            <h3>Search</h3>
+            <input type="text" placeholder="User ID" onChange={e => setUserid(e.target.value)}/>
             {"  "}
-            <button>Update</button>
+            <input type="submit" value="Submit" />
           </form>
-          <label>Name:{data.Name}</label>
-          <label>Total Sales:{data.Sales} </label>
+          <lable>User:{userId}</lable>
+          <label>Name:</label>
+          <label>Total Sales: </label>
           <div>
           </div>
         </div>
@@ -66,5 +69,5 @@ const Section = styled.section`
       flex-direction: column;
       gap: 1rem;
     }
-  }
+  }fgbhkfhgfgkkhfgh
 `;
